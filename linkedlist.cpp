@@ -65,4 +65,50 @@ class LinkedList {
                 temp = temp->getNext();
             };
         };
+        void removeHead() {
+            Node *temp = head;
+            head = head->getNext();
+            delete temp;
+        };
+        void removeRear() {
+            Node *temp = head;
+            while(temp->getNext() != rear) temp = temp->getNext();
+            rear = temp;
+            rear->setNext(NULL);
+            delete temp->getNext();
+        };
+        void removeFirst(int value) {
+            Node *temp = head, *prev = NULL;
+            while(temp->getValue() != value && temp) {
+                prev = temp;
+                temp = temp->getNext();
+            };
+            if(temp == head) {
+                this->removeHead();
+            } else if(prev == rear) {
+                this->removeRear();
+            } else {
+                prev->setNext(temp->getNext());
+                delete temp;
+            }
+        };
+        void removeAll(int value) {
+            Node *temp = head, *prev = NULL;
+            do {
+                if(temp->getValue() == value) {
+                    if(temp == head) {
+                        this->removeHead();
+                        temp = head;
+                    } else if(temp == rear) {
+                        this->removeRear();
+                    } else {
+                        prev->setNext(temp->getNext());
+                        delete temp;
+                        temp = prev->getNext();
+                    }
+                }
+                prev = temp;
+                temp = temp->getNext();
+            }while(temp);
+        };
 };
