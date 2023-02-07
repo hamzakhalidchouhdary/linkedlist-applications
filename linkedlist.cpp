@@ -94,7 +94,7 @@ class LinkedList {
         };
         void removeAll(int value) {
             Node *temp = head, *prev = NULL;
-            do {
+            while(temp){
                 if(temp->getValue() == value) {
                     if(temp == head) {
                         this->removeHead();
@@ -109,6 +109,6 @@ class LinkedList {
                 }
                 prev = temp;
                 temp = temp->getNext();
-            }while(temp);
+            };
         };
 };
