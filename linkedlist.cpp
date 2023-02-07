@@ -40,7 +40,7 @@ class LinkedList {
         LinkedList(int value) {
             
         };
-        void addItemAtRear(int value) {
+        void addAtRear(int value) {
             if(this->head == NULL && this->rear == NULL) {
                 this->head = this->rear = new Node(value);
             } else {
@@ -49,7 +49,7 @@ class LinkedList {
                 this->rear = _new;
             }
         };
-        void addItemAtHead(int value) {
+        void addAtHead(int value) {
             if(this->head == NULL && this->rear == NULL) {
                 this->head = this->rear = new Node(value);
             } else {
