@@ -113,9 +113,10 @@ class LinkedList {
                         temp = prev->getNext();
                         this->length--;
                     }
+                } else {
+                    prev = temp;
+                    temp = temp->getNext();
                 }
-                prev = temp;
-                temp = temp->getNext();
             };
         };
         int getLength() {
