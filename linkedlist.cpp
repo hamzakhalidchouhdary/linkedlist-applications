@@ -34,6 +34,11 @@ class Node {
 class LinkedList {
     Node *head, *rear;
     int length = 0;
+    void removeFromMiddle(Node* target, Node* prev){
+        prev->setNext(target->getNext());
+        delete target;
+        this->length--;
+    }
     public:
         LinkedList() {
             this->head = this->rear = NULL;
@@ -93,9 +98,7 @@ class LinkedList {
             } else if(prev == rear) {
                 this->removeFromRear();
             } else {
-                prev->setNext(temp->getNext());
-                delete temp;
-                this->length--;
+                this->removeFromMiddle(temp, prev);
             }
         };
         void removeAllMatch(int value) {
@@ -108,10 +111,8 @@ class LinkedList {
                     } else if(temp == rear) {
                         this->removeFromRear();
                     } else {
-                        prev->setNext(temp->getNext());
-                        delete temp;
+                        this->removeFromMiddle(temp, prev);
                         temp = prev->getNext();
-                        this->length--;
                     }
                 } else {
                     prev = temp;
