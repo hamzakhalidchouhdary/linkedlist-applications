@@ -41,7 +41,7 @@ class LinkedList {
         LinkedList(int value) {
             
         };
-        void addRear(int value) {
+        void addAtRear(int value) {
             if(this->head == NULL && this->rear == NULL) {
                 this->head = this->rear = new Node(value);
             } else {
@@ -51,7 +51,7 @@ class LinkedList {
             }
             this->length++;
         };
-        void addHead(int value) {
+        void addAtHead(int value) {
             if(this->head == NULL && this->rear == NULL) {
                 this->head = this->rear = new Node(value);
             } else {
@@ -68,13 +68,13 @@ class LinkedList {
                 temp = temp->getNext();
             };
         };
-        void removeHead() {
+        void removeFromHead() {
             Node *temp = head;
             head = head->getNext();
             delete temp;
             this->length--;
         };
-        void removeRear() {
+        void removeFromRear() {
             Node *temp = head;
             while(temp->getNext() != rear) temp = temp->getNext();
             rear = temp;
@@ -82,31 +82,31 @@ class LinkedList {
             delete temp->getNext();
             this->length--;
         };
-        void removeFirst(int value) {
+        void removeFirstMatch(int value) {
             Node *temp = head, *prev = NULL;
             while(temp->getValue() != value && temp) {
                 prev = temp;
                 temp = temp->getNext();
             };
             if(temp == head) {
-                this->removeHead();
+                this->removeFromHead();
             } else if(prev == rear) {
-                this->removeRear();
+                this->removeFromRear();
             } else {
                 prev->setNext(temp->getNext());
                 delete temp;
                 this->length--;
             }
         };
-        void removeAll(int value) {
+        void removeAllMatch(int value) {
             Node *temp = head, *prev = NULL;
             while(temp){
                 if(temp->getValue() == value) {
                     if(temp == head) {
-                        this->removeHead();
+                        this->removeFromHead();
                         temp = head;
                     } else if(temp == rear) {
-                        this->removeRear();
+                        this->removeFromRear();
                     } else {
                         prev->setNext(temp->getNext());
                         delete temp;
