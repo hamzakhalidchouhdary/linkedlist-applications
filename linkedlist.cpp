@@ -33,6 +33,7 @@ class Node {
 
 class LinkedList {
     Node *head, *rear;
+    int length = 0;
     public:
         LinkedList() {
             this->head = this->rear = NULL;
@@ -48,6 +49,7 @@ class LinkedList {
                 this->rear->setNext(_new);
                 this->rear = _new;
             }
+            this->length++;
         };
         void addHead(int value) {
             if(this->head == NULL && this->rear == NULL) {
@@ -57,6 +59,7 @@ class LinkedList {
                 _new->setNext(this->head);
                 this->head = _new;
             }
+            this->length++;
         };
         void getItems() {
             Node *temp = head;
@@ -69,6 +72,7 @@ class LinkedList {
             Node *temp = head;
             head = head->getNext();
             delete temp;
+            this->length--;
         };
         void removeRear() {
             Node *temp = head;
@@ -76,6 +80,7 @@ class LinkedList {
             rear = temp;
             rear->setNext(NULL);
             delete temp->getNext();
+            this->length--;
         };
         void removeFirst(int value) {
             Node *temp = head, *prev = NULL;
@@ -90,6 +95,7 @@ class LinkedList {
             } else {
                 prev->setNext(temp->getNext());
                 delete temp;
+                this->length--;
             }
         };
         void removeAll(int value) {
@@ -105,10 +111,14 @@ class LinkedList {
                         prev->setNext(temp->getNext());
                         delete temp;
                         temp = prev->getNext();
+                        this->length--;
                     }
                 }
                 prev = temp;
                 temp = temp->getNext();
             };
+        };
+        int getLength() {
+            return this->length;
         };
 };
