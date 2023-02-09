@@ -32,13 +32,13 @@ class Node {
 };
 
 class LinkedList {
-Node *head, *rear;
-int length = 0;
-void removeFromMiddle(Node* target, Node* prev){
+  Node *head, *rear;
+  int length = 0;
+  void removeFromMiddle(Node* target, Node* prev){
     prev->setNext(target->getNext());
     delete target;
     this->length--;
-}
+  }
   public:
     LinkedList() {
       this->head = this->rear = NULL;
