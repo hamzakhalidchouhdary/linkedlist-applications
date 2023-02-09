@@ -66,6 +66,19 @@ class LinkedList {
             }
             this->length++;
         };
+        void addAtIndex(int value, int index) {
+            if (index < 1) return;
+            Node* temp = head;
+            for(int i=1; (i<index-1 && temp); i++) temp = temp->getNext();
+            if (!temp) return;
+            if(temp == head) this->addAtHead(value);
+            else if(temp == rear) this->addAtRear(value);
+            else {
+                Node* _new = new Node(value);
+                _new->setNext(temp->getNext());
+                temp->setNext(_new);
+            }
+        }
         void getItems() {
             Node *temp = head;
             while(temp) {
