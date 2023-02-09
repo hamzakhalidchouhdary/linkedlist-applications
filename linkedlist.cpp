@@ -78,7 +78,7 @@ class LinkedList {
         _new->setNext(temp->getNext());
         temp->setNext(_new);
       }
-    }
+    };
     void getItems() {
       Node *temp = head;
       while(temp) {
