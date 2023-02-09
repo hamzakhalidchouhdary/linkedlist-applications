@@ -1,1 +1,0 @@
-# linkedlist-applications (Stack)
