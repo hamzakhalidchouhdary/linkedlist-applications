@@ -1,1 +1,1 @@
-# linkedlist-applications
+# linkedlist-applications (Stack)
