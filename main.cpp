@@ -9,10 +9,10 @@ using namespace std;
 int main()
 {
     LinkedList numList;
-    numList.addItemAtRear(3);
-    numList.addItemAtRear(5);
-    numList.addItemAtHead(4);
-    numList.addItemAtRear(9);
+    numList.addAtRear(3);
+    numList.addAtRear(5);
+    numList.addAtHead(4);
+    numList.addAtRear(9);
     numList.getItems();
     
 }
