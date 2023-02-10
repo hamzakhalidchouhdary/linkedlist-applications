@@ -11,4 +11,7 @@ class Stack: private LinkedList {
     void pop() {
       this->removeFromHead();
     };
+    int top() {
+      return this->getItemAtHead();
+    };
 };
