@@ -133,6 +133,9 @@ class LinkedList {
         }
       };
     };
+    int getItemAtHead() {
+      return this->head->getValue();
+    };
     int getLength() {
       return this->length;
     };
