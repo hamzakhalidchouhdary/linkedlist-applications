@@ -8,11 +8,11 @@ using namespace std;
 
 int main()
 {
-    LinkedList numList;
-    numList.addAtRear(3);
-    numList.addAtRear(5);
-    numList.addAtHead(4);
-    numList.addAtRear(9);
-    numList.getItems();
-    
+  LinkedList numList;
+  numList.addAtRear(3);
+  numList.addAtRear(5);
+  numList.addAtHead(4);
+  numList.addAtRear(9);
+  numList.getItems();
+  
 }
