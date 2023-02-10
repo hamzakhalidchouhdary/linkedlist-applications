@@ -8,4 +8,7 @@ class Stack: private LinkedList {
     void getItems() {
       LinkedList::getItems();
     };
+    void pop() {
+      this->removeFromHead();
+    };
 };
