@@ -139,6 +139,13 @@ class LinkedList {
     int getItemAtRear() {
       return this->rear->getValue();
     };
+    int getItemAt(int index) {
+      if (index < 1) return NULL;
+      Node* temp = NULL;
+      for(int i=1; (i<index - 1 && temp); i++) temp = temp->getNext();
+      if (!temp) return NULL;
+      return temp->getValue();
+    };
     int getLength() {
       return this->length;
     };
