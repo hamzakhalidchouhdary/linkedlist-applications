@@ -136,6 +136,9 @@ class LinkedList {
     int getItemAtHead() {
       return this->head->getValue();
     };
+    int getItemAtRear() {
+      return this->rear->getValue();
+    };
     int getLength() {
       return this->length;
     };
