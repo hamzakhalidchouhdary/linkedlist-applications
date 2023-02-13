@@ -9,4 +9,8 @@ class Queue: protected LinkedList {
     void dequeue() {
       this->removeFromHead();
     };
+
+    void getItems() {
+      LinkedList::getItems();
+    };
 };
