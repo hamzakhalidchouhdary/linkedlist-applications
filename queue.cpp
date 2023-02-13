@@ -5,4 +5,8 @@ class Queue: protected LinkedList {
     void enqueue(int value) {
       this->addAtRear(value);
     };
+
+    void dequeue() {
+      this->removeFromHead();
+    };
 };
